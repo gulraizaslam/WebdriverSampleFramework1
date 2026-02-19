@@ -19,16 +19,16 @@ public class LandingPage extends AbstractComponent {
     }
 
     // WebElement userEmail = driver.findElement(By.id("userEmail"));
-    
+
     @FindBy(id = "userEmail")
     WebElement userEmail;
-    
+
     @FindBy(id = "userPassword")
     WebElement passwordEle;
-    
+
     @FindBy(id = "login")
     WebElement submit;
-    
+
     @FindBy(css = "[class*='flyInOut']")
     WebElement errorMessage;
 
@@ -39,9 +39,9 @@ public class LandingPage extends AbstractComponent {
     }
 
     public void goTo() {
-        driver.get("https://rahulshettyacademy.com/client");
+        driver.get("Project URL entered here");
     }
-    
+
     public String getErrorMessage() {
         waitForWebElementToAppear(errorMessage);
         return errorMessage.getText();

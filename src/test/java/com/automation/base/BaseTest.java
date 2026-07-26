@@ -15,6 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -46,6 +47,15 @@ public class BaseTest {
         } else if (browserName.equalsIgnoreCase("edge")) {
             driver = new EdgeDriver();
         }
+        Actions actions=new Actions(driver);
+        actions.contextClick().perform();
+        actions.doubleClick().perform();
+        actions.clickAndHold().perform();
+        actions.dragAndDrop().perform();
+        actions.keyDown().perform();
+        actions.keyUp().perform();
+        actions.sendKeys().perform();
+        actions.keyEscape().perform();
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
